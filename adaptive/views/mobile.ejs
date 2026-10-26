@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Hardware | AWD Móvil</title>
+    <link rel="stylesheet" href="<%= base %>/public/css/mobile.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="logo" href="#">Server<span>Hardware</span></a>
+    </header>
+
+    <main>
+        <h1>Catálogo de Hardware <small>Versión B &mdash; AWD (móvil)</small></h1>
+
+        <div class="lista">
+<% productos.forEach((p, i) => { -%>
+            <article class="item">
+                <img class="item-img" src="<%= base %>/images/<%= p.slug %>-400.webp" width="400" height="300" alt="<%= p.nombre %>"<% if (i > 0) { %> loading="lazy"<% } %>>
+                <div class="item-body">
+                    <p class="item-tag"><%= p.categoriaEtiqueta %> · <%= p.marca %></p>
+                    <h2 class="item-title"><%= p.nombre %></h2>
+                    <div class="item-footer">
+                        <span class="item-price"><%= p.precioTxt %></span>
+                        <button type="button" class="item-btn">Comprar</button>
+                    </div>
+                </div>
+            </article>
+<% }) -%>
+        </div>
+    </main>
+
+    <footer class="site-footer">Práctica RWD vs. AWD &mdash; Interfaces Web</footer>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Hardware | RWD</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="logo" href="#">Server<span>Hardware</span></a>
+        <nav class="nav">
+            <a href="#catalogo">Catálogo</a>
+            <a href="#especificaciones">Especificaciones</a>
+        </nav>
+    </header>
+
+    <h1 class="titulo">Catálogo de Hardware y Componentes de Servidor <small>Versión A &mdash; RWD</small></h1>
+
+    <div class="layout">
+        <button type="button" class="filtros-toggle" id="filtros-toggle" aria-expanded="false" aria-controls="panel-filtros">
+            Filtros y comparativa
+        </button>
+
+        <aside class="sidebar" id="panel-filtros">
+            <div class="sidebar-inner">
+                <div class="sidebar-box">
+                    <form class="filtros">
+                        <h2>Filtros</h2>
+                        <fieldset>
+                            <legend>Categoría</legend>
+                        <label><input type="checkbox" name="categoria"> Almacenamiento</label>
+                        <label><input type="checkbox" name="categoria"> Fuente de poder</label>
+                        <label><input type="checkbox" name="categoria"> Gabinete</label>
+                        <label><input type="checkbox" name="categoria"> Memoria RAM</label>
+                        <label><input type="checkbox" name="categoria"> Placa base</label>
+                        <label><input type="checkbox" name="categoria"> Procesador</label>
+                        <label><input type="checkbox" name="categoria"> Refrigeración</label>
+                        <label><input type="checkbox" name="categoria"> Tarjeta gráfica</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Marca</legend>
+                        <label><input type="checkbox" name="marca"> AMD</label>
+                        <label><input type="checkbox" name="marca"> ASUS</label>
+                        <label><input type="checkbox" name="marca"> Corsair</label>
+                        <label><input type="checkbox" name="marca"> Intel</label>
+                        <label><input type="checkbox" name="marca"> Lian Li</label>
+                        <label><input type="checkbox" name="marca"> MSI</label>
+                        <label><input type="checkbox" name="marca"> NVIDIA</label>
+                        <label><input type="checkbox" name="marca"> NZXT</label>
+                        <label><input type="checkbox" name="marca"> Noctua</label>
+                        <label><input type="checkbox" name="marca"> Samsung</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Precio máximo</legend>
+                            <input type="range" name="precio" min="100" max="1600" value="1600" aria-label="Precio máximo">
+                        </fieldset>
+                    </form>
+
+                    <section class="comparativa">
+                        <h2>Comparativa de precios</h2>
+                        <ul class="barras">
+                        <li style="--pct: 36.9%">
+                            <span>i9-14900K</span>
+                            <span class="barras-valor">$590</span>
+                            <span class="barras-pista"><span class="barras-barra"></span></span>
+                        </li>
+                        <li style="--pct: 28.1%">
+                            <span>Ryzen 7 7800X3D</span>
+                            <span class="barras-valor">$449</span>
+                            <span class="barras-pista"><span class="barras-barra"></span></span>
+                        </li>
+                        <li style="--pct: 100.0%">
+                            <span>RTX 4090</span>
+                            <span class="barras-valor">$1,600</span>
+                            <span class="barras-pista"><span class="barras-barra"></span></span>
+                        </li>
+                        <li style="--pct: 53.1%">
+                            <span>RTX 4070 Ti Super</span>
+                            <span class="barras-valor">$850</span>
+                            <span class="barras-pista"><span class="barras-barra"></span></span>
+                        </li>
+                        <li style="--pct: 39.4%">
+                            <span>ROG Z790 Hero</span>
+                            <span class="barras-valor">$630</span>
+                            <span class="barras-pista"><span class="barras-barra"></span></span>
+                        </li>
+                        <li style="--pct: 13.7%">
+                            <span>B650 Tomahawk</span>
+                            <span class="barras-valor">$220</span>
+                            <span class="barras-pista"><span class="barras-barra"></span></span>
+                        </li>
+                        <li style="--pct: 14.7%">
+                            <span>Dominator 32GB</span>
+                            <span class="barras-valor">$235</span>
+                            <span class="barras-pista"><span class="barras-barra"></span></span>
+                        </li>
+                        <li style="--pct: 11.2%">
+                            <span>990 PRO 2TB</span>
+                            <span class="barras-valor">$180</span>
+                            <span class="barras-pista"><span class="barras-barra"></span></span>
+                        </li>
+                        <li style="--pct: 13.1%">
+                            <span>RM1000x</span>
+                            <span class="barras-valor">$210</span>
+                            <span class="barras-pista"><span class="barras-barra"></span></span>
+                        </li>
+                        <li style="--pct: 18.7%">
+                            <span>Kraken Elite 360</span>
+                            <span class="barras-valor">$300</span>
+                            <span class="barras-pista"><span class="barras-barra"></span></span>
+                        </li>
+                        <li style="--pct: 10.0%">
+                            <span>O11 Dynamic EVO</span>
+                            <span class="barras-valor">$160</span>
+                            <span class="barras-pista"><span class="barras-barra"></span></span>
+                        </li>
+                        <li style="--pct: 7.5%">
+                            <span>NH-D15</span>
+                            <span class="barras-valor">$120</span>
+                            <span class="barras-pista"><span class="barras-barra"></span></span>
+                        </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </aside>
+
+        <main id="catalogo">
+            <h2>Productos</h2>
+            <div class="contenedor-grid">
+            <article class="card">
+                <picture>
+                    <source type="image/webp" srcset="images/webp/intel-i9-14900k-400.webp 400w, images/webp/intel-i9-14900k-800.webp 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px">
+                    <img class="card-img" src="images/jpg/intel-i9-14900k-800.jpg" srcset="images/jpg/intel-i9-14900k-400.jpg 400w, images/jpg/intel-i9-14900k-800.jpg 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px"
+                         width="800" height="600" alt="Intel Core i9-14900K">
+                </picture>
+                <div class="card-body">
+                    <p class="card-tag">Procesador · Intel</p>
+                    <h3 class="card-title">Intel Core i9-14900K</h3>
+                    <dl class="card-specs">
+                        <div><dt>Socket</dt><dd>LGA1700</dd></div>
+                        <div><dt>Nucleos</dt><dd>24</dd></div>
+                        <div><dt>Hilos</dt><dd>32</dd></div>
+                        <div><dt>Frecuencia base</dt><dd>3.2 GHz</dd></div>
+                    </dl>
+                    <div class="card-footer">
+                        <span class="card-price">$589.99</span>
+                        <button type="button" class="card-btn">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <picture>
+                    <source type="image/webp" srcset="images/webp/ryzen-7-7800x3d-400.webp 400w, images/webp/ryzen-7-7800x3d-800.webp 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px">
+                    <img class="card-img" src="images/jpg/ryzen-7-7800x3d-800.jpg" srcset="images/jpg/ryzen-7-7800x3d-400.jpg 400w, images/jpg/ryzen-7-7800x3d-800.jpg 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px"
+                         width="800" height="600" alt="AMD Ryzen 7 7800X3D" loading="lazy">
+                </picture>
+                <div class="card-body">
+                    <p class="card-tag">Procesador · AMD</p>
+                    <h3 class="card-title">AMD Ryzen 7 7800X3D</h3>
+                    <dl class="card-specs">
+                        <div><dt>Socket</dt><dd>AM5</dd></div>
+                        <div><dt>Nucleos</dt><dd>8</dd></div>
+                        <div><dt>Hilos</dt><dd>16</dd></div>
+                        <div><dt>Frecuencia base</dt><dd>4.2 GHz</dd></div>
+                    </dl>
+                    <div class="card-footer">
+                        <span class="card-price">$449.00</span>
+                        <button type="button" class="card-btn">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <picture>
+                    <source type="image/webp" srcset="images/webp/rtx-4090-400.webp 400w, images/webp/rtx-4090-800.webp 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px">
+                    <img class="card-img" src="images/jpg/rtx-4090-800.jpg" srcset="images/jpg/rtx-4090-400.jpg 400w, images/jpg/rtx-4090-800.jpg 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px"
+                         width="800" height="600" alt="NVIDIA GeForce RTX 4090 Founders Edition" loading="lazy">
+                </picture>
+                <div class="card-body">
+                    <p class="card-tag">Tarjeta gráfica · NVIDIA</p>
+                    <h3 class="card-title">NVIDIA GeForce RTX 4090 Founders Edition</h3>
+                    <dl class="card-specs">
+                        <div><dt>Vram</dt><dd>24 GB GDDR6X</dd></div>
+                        <div><dt>Bus memoria</dt><dd>384-bit</dd></div>
+                        <div><dt>Núcleos cuda</dt><dd>16384</dd></div>
+                        <div><dt>Reloj boost</dt><dd>2.52 GHz</dd></div>
+                    </dl>
+                    <div class="card-footer">
+                        <span class="card-price">$1,599.99</span>
+                        <button type="button" class="card-btn">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <picture>
+                    <source type="image/webp" srcset="images/webp/rtx-4070ti-super-400.webp 400w, images/webp/rtx-4070ti-super-800.webp 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px">
+                    <img class="card-img" src="images/jpg/rtx-4070ti-super-800.jpg" srcset="images/jpg/rtx-4070ti-super-400.jpg 400w, images/jpg/rtx-4070ti-super-800.jpg 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px"
+                         width="800" height="600" alt="ASUS ROG Strix GeForce RTX 4070 Ti Super" loading="lazy">
+                </picture>
+                <div class="card-body">
+                    <p class="card-tag">Tarjeta gráfica · ASUS</p>
+                    <h3 class="card-title">ASUS ROG Strix GeForce RTX 4070 Ti Super</h3>
+                    <dl class="card-specs">
+                        <div><dt>Vram</dt><dd>16 GB GDDR6X</dd></div>
+                        <div><dt>Bus memoria</dt><dd>256-bit</dd></div>
+                        <div><dt>Núcleos cuda</dt><dd>8448</dd></div>
+                        <div><dt>Reloj boost</dt><dd>2.67 GHz</dd></div>
+                    </dl>
+                    <div class="card-footer">
+                        <span class="card-price">$849.99</span>
+                        <button type="button" class="card-btn">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <picture>
+                    <source type="image/webp" srcset="images/webp/rog-z790-hero-400.webp 400w, images/webp/rog-z790-hero-800.webp 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px">
+                    <img class="card-img" src="images/jpg/rog-z790-hero-800.jpg" srcset="images/jpg/rog-z790-hero-400.jpg 400w, images/jpg/rog-z790-hero-800.jpg 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px"
+                         width="800" height="600" alt="ASUS ROG Maximus Z790 Hero" loading="lazy">
+                </picture>
+                <div class="card-body">
+                    <p class="card-tag">Placa base · ASUS</p>
+                    <h3 class="card-title">ASUS ROG Maximus Z790 Hero</h3>
+                    <dl class="card-specs">
+                        <div><dt>Factor forma</dt><dd>ATX</dd></div>
+                        <div><dt>Socket</dt><dd>LGA1700</dd></div>
+                        <div><dt>Chipset</dt><dd>Intel Z790</dd></div>
+                        <div><dt>Soporte memoria</dt><dd>DDR5 hasta 7800+(OC) MHz</dd></div>
+                    </dl>
+                    <div class="card-footer">
+                        <span class="card-price">$629.99</span>
+                        <button type="button" class="card-btn">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <picture>
+                    <source type="image/webp" srcset="images/webp/msi-b650-tomahawk-400.webp 400w, images/webp/msi-b650-tomahawk-800.webp 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px">
+                    <img class="card-img" src="images/jpg/msi-b650-tomahawk-800.jpg" srcset="images/jpg/msi-b650-tomahawk-400.jpg 400w, images/jpg/msi-b650-tomahawk-800.jpg 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px"
+                         width="800" height="600" alt="MSI MAG B650 TOMAHAWK WIFI" loading="lazy">
+                </picture>
+                <div class="card-body">
+                    <p class="card-tag">Placa base · MSI</p>
+                    <h3 class="card-title">MSI MAG B650 TOMAHAWK WIFI</h3>
+                    <dl class="card-specs">
+                        <div><dt>Factor forma</dt><dd>ATX</dd></div>
+                        <div><dt>Socket</dt><dd>AM5</dd></div>
+                        <div><dt>Chipset</dt><dd>AMD B650</dd></div>
+                        <div><dt>Soporte memoria</dt><dd>DDR5 hasta 6600+(OC) MHz</dd></div>
+                    </dl>
+                    <div class="card-footer">
+                        <span class="card-price">$219.99</span>
+                        <button type="button" class="card-btn">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <picture>
+                    <source type="image/webp" srcset="images/webp/corsair-dominator-ddr5-400.webp 400w, images/webp/corsair-dominator-ddr5-800.webp 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px">
+                    <img class="card-img" src="images/jpg/corsair-dominator-ddr5-800.jpg" srcset="images/jpg/corsair-dominator-ddr5-400.jpg 400w, images/jpg/corsair-dominator-ddr5-800.jpg 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px"
+                         width="800" height="600" alt="Corsair Dominator Titanium DDR5 32GB (2x16GB)" loading="lazy">
+                </picture>
+                <div class="card-body">
+                    <p class="card-tag">Memoria RAM · Corsair</p>
+                    <h3 class="card-title">Corsair Dominator Titanium DDR5 32GB (2x16GB)</h3>
+                    <dl class="card-specs">
+                        <div><dt>Capacidad</dt><dd>32 GB (2 x 16 GB)</dd></div>
+                        <div><dt>Tipo</dt><dd>DDR5</dd></div>
+                        <div><dt>Velocidad</dt><dd>7200 MHz</dd></div>
+                        <div><dt>Latencia cas</dt><dd>CL34</dd></div>
+                    </dl>
+                    <div class="card-footer">
+                        <span class="card-price">$234.99</span>
+                        <button type="button" class="card-btn">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <picture>
+                    <source type="image/webp" srcset="images/webp/samsung-990-pro-2tb-400.webp 400w, images/webp/samsung-990-pro-2tb-800.webp 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px">
+                    <img class="card-img" src="images/jpg/samsung-990-pro-2tb-800.jpg" srcset="images/jpg/samsung-990-pro-2tb-400.jpg 400w, images/jpg/samsung-990-pro-2tb-800.jpg 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px"
+                         width="800" height="600" alt="Samsung 990 PRO NVMe M.2 SSD 2TB" loading="lazy">
+                </picture>
+                <div class="card-body">
+                    <p class="card-tag">Almacenamiento · Samsung</p>
+                    <h3 class="card-title">Samsung 990 PRO NVMe M.2 SSD 2TB</h3>
+                    <dl class="card-specs">
+                        <div><dt>Capacidad</dt><dd>2 TB</dd></div>
+                        <div><dt>Interfaz</dt><dd>PCIe Gen 4.0 x4, NVMe 2.0</dd></div>
+                        <div><dt>Velocidad lectura</dt><dd>Hasta 7450 MB/s</dd></div>
+                        <div><dt>Velocidad escritura</dt><dd>Hasta 6900 MB/s</dd></div>
+                    </dl>
+                    <div class="card-footer">
+                        <span class="card-price">$179.99</span>
+                        <button type="button" class="card-btn">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <picture>
+                    <source type="image/webp" srcset="images/webp/corsair-rm1000x-shift-400.webp 400w, images/webp/corsair-rm1000x-shift-800.webp 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px">
+                    <img class="card-img" src="images/jpg/corsair-rm1000x-shift-800.jpg" srcset="images/jpg/corsair-rm1000x-shift-400.jpg 400w, images/jpg/corsair-rm1000x-shift-800.jpg 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px"
+                         width="800" height="600" alt="Corsair RM1000x Shift 1000W 80 Plus Gold" loading="lazy">
+                </picture>
+                <div class="card-body">
+                    <p class="card-tag">Fuente de poder · Corsair</p>
+                    <h3 class="card-title">Corsair RM1000x Shift 1000W 80 Plus Gold</h3>
+                    <dl class="card-specs">
+                        <div><dt>Potencia</dt><dd>1000 W</dd></div>
+                        <div><dt>Certificacion</dt><dd>80 PLUS Gold</dd></div>
+                        <div><dt>Modularidad</dt><dd>Totalmente Modular (Conectores laterales)</dd></div>
+                        <div><dt>Formato</dt><dd>ATX 3.0</dd></div>
+                    </dl>
+                    <div class="card-footer">
+                        <span class="card-price">$209.99</span>
+                        <button type="button" class="card-btn">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <picture>
+                    <source type="image/webp" srcset="images/webp/nzxt-kraken-elite-360-400.webp 400w, images/webp/nzxt-kraken-elite-360-800.webp 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px">
+                    <img class="card-img" src="images/jpg/nzxt-kraken-elite-360-800.jpg" srcset="images/jpg/nzxt-kraken-elite-360-400.jpg 400w, images/jpg/nzxt-kraken-elite-360-800.jpg 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px"
+                         width="800" height="600" alt="NZXT Kraken Elite 360 RGB" loading="lazy">
+                </picture>
+                <div class="card-body">
+                    <p class="card-tag">Refrigeración · NZXT</p>
+                    <h3 class="card-title">NZXT Kraken Elite 360 RGB</h3>
+                    <dl class="card-specs">
+                        <div><dt>Tipo</dt><dd>Refrigeración Líquida AIO</dd></div>
+                        <div><dt>Tamaño radiador</dt><dd>360 mm</dd></div>
+                        <div><dt>Pantalla</dt><dd>LCD 2.36 Personalizable</dd></div>
+                        <div><dt>Ventiladores</dt><dd>3x F120 RGB Core</dd></div>
+                    </dl>
+                    <div class="card-footer">
+                        <span class="card-price">$299.99</span>
+                        <button type="button" class="card-btn">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <picture>
+                    <source type="image/webp" srcset="images/webp/lian-li-o11-evo-400.webp 400w, images/webp/lian-li-o11-evo-800.webp 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px">
+                    <img class="card-img" src="images/jpg/lian-li-o11-evo-800.jpg" srcset="images/jpg/lian-li-o11-evo-400.jpg 400w, images/jpg/lian-li-o11-evo-800.jpg 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px"
+                         width="800" height="600" alt="Lian Li O11 Dynamic EVO" loading="lazy">
+                </picture>
+                <div class="card-body">
+                    <p class="card-tag">Gabinete · Lian Li</p>
+                    <h3 class="card-title">Lian Li O11 Dynamic EVO</h3>
+                    <dl class="card-specs">
+                        <div><dt>Tipo</dt><dd>Mid Tower</dd></div>
+                        <div><dt>Materiales</dt><dd>Vidrio templado, Aluminio, Acero</dd></div>
+                        <div><dt>Soporte placa base</dt><dd>E-ATX, ATX, Micro-ATX, Mini-ITX</dd></div>
+                        <div><dt>Soporte radiador</dt><dd>Hasta 360 mm (Superior, Lateral, Inferior)</dd></div>
+                    </dl>
+                    <div class="card-footer">
+                        <span class="card-price">$159.99</span>
+                        <button type="button" class="card-btn">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <picture>
+                    <source type="image/webp" srcset="images/webp/noctua-nh-d15-black-400.webp 400w, images/webp/noctua-nh-d15-black-800.webp 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px">
+                    <img class="card-img" src="images/jpg/noctua-nh-d15-black-800.jpg" srcset="images/jpg/noctua-nh-d15-black-400.jpg 400w, images/jpg/noctua-nh-d15-black-800.jpg 800w" sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px"
+                         width="800" height="600" alt="Noctua NH-D15 chromax.black" loading="lazy">
+                </picture>
+                <div class="card-body">
+                    <p class="card-tag">Refrigeración · Noctua</p>
+                    <h3 class="card-title">Noctua NH-D15 chromax.black</h3>
+                    <dl class="card-specs">
+                        <div><dt>Tipo</dt><dd>Disipador por Aire de Doble Torre</dd></div>
+                        <div><dt>Ventiladores</dt><dd>2x NF-A15 HS-PWM chromax.black</dd></div>
+                        <div><dt>Compatibilidad</dt><dd>Intel LGA1700/1200/115x, AMD AM5/AM4</dd></div>
+                        <div><dt>Nivel ruido</dt><dd>24.6 dB(A)</dd></div>
+                    </dl>
+                    <div class="card-footer">
+                        <span class="card-price">$119.95</span>
+                        <button type="button" class="card-btn">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </main>
+    </div>
+
+    <section class="especificaciones" id="especificaciones">
+        <h2>Tabla completa de especificaciones</h2>
+        <div class="tabla-contenedor">
+            <table class="tabla">
+                <thead>
+                    <tr><th>Producto</th><th>Categoría</th><th>Especificaciones</th><th>Precio</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Intel Core i9-14900K</th>
+                        <td>Procesador</td>
+                        <td><ul class="tabla-specs"><li><strong>Socket:</strong> LGA1700</li><li><strong>Nucleos:</strong> 24</li><li><strong>Hilos:</strong> 32</li><li><strong>Frecuencia base:</strong> 3.2 GHz</li><li><strong>Frecuencia turbo:</strong> 6.0 GHz</li><li><strong>Cache:</strong> 36 MB Intel Smart Cache</li><li><strong>Tdp:</strong> 125W</li></ul></td>
+                        <td class="tabla-precio">$589.99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">AMD Ryzen 7 7800X3D</th>
+                        <td>Procesador</td>
+                        <td><ul class="tabla-specs"><li><strong>Socket:</strong> AM5</li><li><strong>Nucleos:</strong> 8</li><li><strong>Hilos:</strong> 16</li><li><strong>Frecuencia base:</strong> 4.2 GHz</li><li><strong>Frecuencia turbo:</strong> 5.0 GHz</li><li><strong>Cache:</strong> 96 MB L3 3D V-Cache</li><li><strong>Tdp:</strong> 120W</li></ul></td>
+                        <td class="tabla-precio">$449.00</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">NVIDIA GeForce RTX 4090 Founders Edition</th>
+                        <td>Tarjeta gráfica</td>
+                        <td><ul class="tabla-specs"><li><strong>Vram:</strong> 24 GB GDDR6X</li><li><strong>Bus memoria:</strong> 384-bit</li><li><strong>Núcleos cuda:</strong> 16384</li><li><strong>Reloj boost:</strong> 2.52 GHz</li><li><strong>Consumo energia:</strong> 450W</li><li><strong>Conectores:</strong> 1x 16-pin (12VHPWR)</li></ul></td>
+                        <td class="tabla-precio">$1,599.99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ASUS ROG Strix GeForce RTX 4070 Ti Super</th>
+                        <td>Tarjeta gráfica</td>
+                        <td><ul class="tabla-specs"><li><strong>Vram:</strong> 16 GB GDDR6X</li><li><strong>Bus memoria:</strong> 256-bit</li><li><strong>Núcleos cuda:</strong> 8448</li><li><strong>Reloj boost:</strong> 2.67 GHz</li><li><strong>Refrigeración:</strong> Triple Ventilador Axial-tech</li><li><strong>Consumo energia:</strong> 285W</li></ul></td>
+                        <td class="tabla-precio">$849.99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ASUS ROG Maximus Z790 Hero</th>
+                        <td>Placa base</td>
+                        <td><ul class="tabla-specs"><li><strong>Factor forma:</strong> ATX</li><li><strong>Socket:</strong> LGA1700</li><li><strong>Chipset:</strong> Intel Z790</li><li><strong>Soporte memoria:</strong> DDR5 hasta 7800+(OC) MHz</li><li><strong>Ranuras m2:</strong> 5</li><li><strong>Conectividad:</strong> Wi-Fi 6E, Ethernet 2.5Gb, Thunderbolt 4</li></ul></td>
+                        <td class="tabla-precio">$629.99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">MSI MAG B650 TOMAHAWK WIFI</th>
+                        <td>Placa base</td>
+                        <td><ul class="tabla-specs"><li><strong>Factor forma:</strong> ATX</li><li><strong>Socket:</strong> AM5</li><li><strong>Chipset:</strong> AMD B650</li><li><strong>Soporte memoria:</strong> DDR5 hasta 6600+(OC) MHz</li><li><strong>Ranuras m2:</strong> 3</li><li><strong>Conectividad:</strong> Wi-Fi 6E, Ethernet 2.5Gb, Bluetooth 5.3</li></ul></td>
+                        <td class="tabla-precio">$219.99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Corsair Dominator Titanium DDR5 32GB (2x16GB)</th>
+                        <td>Memoria RAM</td>
+                        <td><ul class="tabla-specs"><li><strong>Capacidad:</strong> 32 GB (2 x 16 GB)</li><li><strong>Tipo:</strong> DDR5</li><li><strong>Velocidad:</strong> 7200 MHz</li><li><strong>Latencia cas:</strong> CL34</li><li><strong>Voltaje:</strong> 1.45V</li><li><strong>Iluminacion:</strong> RGB Dinámico</li></ul></td>
+                        <td class="tabla-precio">$234.99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Samsung 990 PRO NVMe M.2 SSD 2TB</th>
+                        <td>Almacenamiento</td>
+                        <td><ul class="tabla-specs"><li><strong>Capacidad:</strong> 2 TB</li><li><strong>Interfaz:</strong> PCIe Gen 4.0 x4, NVMe 2.0</li><li><strong>Velocidad lectura:</strong> Hasta 7450 MB/s</li><li><strong>Velocidad escritura:</strong> Hasta 6900 MB/s</li><li><strong>Factor forma:</strong> M.2 2280</li><li><strong>Disipador:</strong> Incluido</li></ul></td>
+                        <td class="tabla-precio">$179.99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Corsair RM1000x Shift 1000W 80 Plus Gold</th>
+                        <td>Fuente de poder</td>
+                        <td><ul class="tabla-specs"><li><strong>Potencia:</strong> 1000 W</li><li><strong>Certificacion:</strong> 80 PLUS Gold</li><li><strong>Modularidad:</strong> Totalmente Modular (Conectores laterales)</li><li><strong>Formato:</strong> ATX 3.0</li><li><strong>Tamaño ventilador:</strong> 140 mm FDB</li></ul></td>
+                        <td class="tabla-precio">$209.99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">NZXT Kraken Elite 360 RGB</th>
+                        <td>Refrigeración</td>
+                        <td><ul class="tabla-specs"><li><strong>Tipo:</strong> Refrigeración Líquida AIO</li><li><strong>Tamaño radiador:</strong> 360 mm</li><li><strong>Pantalla:</strong> LCD 2.36 Personalizable</li><li><strong>Ventiladores:</strong> 3x F120 RGB Core</li><li><strong>Compatibilidad:</strong> Intel LGA 1700/1200, AMD AM5/AM4</li></ul></td>
+                        <td class="tabla-precio">$299.99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Lian Li O11 Dynamic EVO</th>
+                        <td>Gabinete</td>
+                        <td><ul class="tabla-specs"><li><strong>Tipo:</strong> Mid Tower</li><li><strong>Materiales:</strong> Vidrio templado, Aluminio, Acero</li><li><strong>Soporte placa base:</strong> E-ATX, ATX, Micro-ATX, Mini-ITX</li><li><strong>Soporte radiador:</strong> Hasta 360 mm (Superior, Lateral, Inferior)</li><li><strong>Panel e s:</strong> 1x USB 3.1 Tipo-C, 2x USB 3.0, Audio HD</li></ul></td>
+                        <td class="tabla-precio">$159.99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Noctua NH-D15 chromax.black</th>
+                        <td>Refrigeración</td>
+                        <td><ul class="tabla-specs"><li><strong>Tipo:</strong> Disipador por Aire de Doble Torre</li><li><strong>Ventiladores:</strong> 2x NF-A15 HS-PWM chromax.black</li><li><strong>Compatibilidad:</strong> Intel LGA1700/1200/115x, AMD AM5/AM4</li><li><strong>Nivel ruido:</strong> 24.6 dB(A)</li><li><strong>Material:</strong> Cobre (base y tubos), Aluminio (aletas)</li></ul></td>
+                        <td class="tabla-precio">$119.95</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer class="site-footer">Práctica RWD vs. AWD &mdash; Interfaces Web</footer>
+</body>
+</html>

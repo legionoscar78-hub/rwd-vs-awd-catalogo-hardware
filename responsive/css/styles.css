@@ -1,0 +1,396 @@
+/* Catálogo de Hardware - Versión A (RWD)
+   Mobile-first. Puntos de ruptura: móvil < 640px | tablet 640-1024px | desktop > 1024px */
+
+:root {
+  --azul: #007bff;
+  --azul-osc: #0056b3;
+  --navy: #1b2a41;
+  --fondo: #f4f6f9;
+  --texto: #333333;
+  --suave: #666666;
+  --borde: #e1e5ea;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+  line-height: 1.4;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Encabezado (Flexbox) ---------- */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--navy);
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #5fb0ff;
+}
+
+.nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.nav a {
+  color: #d6e2f3;
+  text-decoration: none;
+}
+
+.titulo {
+  margin: 0;
+  padding: 1.25rem 1rem 0;
+  font-size: clamp(1.3rem, 4vw, 2rem);
+  color: var(--navy);
+}
+
+.titulo small {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: var(--suave);
+}
+
+/* ---------- Layout (Grid) ---------- */
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+main h2 {
+  margin: 0 0 1rem;
+  color: var(--navy);
+}
+
+/* ---------- Barra lateral: en móvil/tablet es un menú desplegable ---------- */
+
+.filtros-toggle {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font: inherit;
+  font-weight: bold;
+  text-align: left;
+  color: #ffffff;
+  background-color: var(--navy);
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.filtros-toggle::after {
+  content: "▾";
+  float: right;
+}
+
+.filtros-toggle[aria-expanded="true"]::after {
+  content: "▴";
+}
+
+.sidebar {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.sidebar.is-open {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition: grid-template-rows 0.3s ease, visibility 0s;
+}
+
+.sidebar-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.sidebar-box {
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  color: var(--navy);
+}
+
+.filtros fieldset {
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 0;
+}
+
+.filtros legend {
+  margin-bottom: 0.35rem;
+  padding: 0;
+  font-weight: bold;
+}
+
+.filtros label {
+  display: block;
+  padding: 0.2rem 0;
+  font-size: 0.95rem;
+}
+
+.filtros input[type="range"] {
+  width: 100%;
+}
+
+/* ---------- Gráfico de comparativa (barras CSS) ---------- */
+
+.comparativa {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--borde);
+}
+
+.barras {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.barras li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 0.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+}
+
+.barras-valor {
+  font-weight: bold;
+}
+
+.barras-pista {
+  grid-column: 1 / -1;
+  height: 0.55rem;
+  background-color: var(--borde);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barras-barra {
+  display: block;
+  width: var(--pct);
+  height: 100%;
+  background-color: var(--azul);
+}
+
+/* ---------- Tarjetas (Grid + Flexbox) ---------- */
+
+.contenedor-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr); /* móvil: 1 columna */
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3; /* reserva el espacio y evita CLS */
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.card-tag {
+  margin: 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--azul-osc);
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.card-specs {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--suave);
+}
+
+.card-specs div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.card-specs dd {
+  margin: 0;
+  text-align: right;
+  color: var(--texto);
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.card-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--navy);
+}
+
+.card-btn {
+  padding: 8px 16px;
+  font: inherit;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background-color: var(--azul);
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card-btn:hover {
+  background-color: var(--azul-osc);
+}
+
+/* ---------- Tabla completa de especificaciones ---------- */
+
+.especificaciones {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.especificaciones h2 {
+  color: var(--navy);
+}
+
+.tabla-contenedor {
+  overflow-x: auto; /* la tabla se desplaza dentro de su contenedor, no la página */
+}
+
+.tabla {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.tabla th,
+.tabla td {
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--borde);
+}
+
+.tabla thead th {
+  color: #ffffff;
+  background-color: var(--navy);
+}
+
+.tabla-specs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--suave);
+}
+
+.tabla-precio {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.site-footer {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #d6e2f3;
+  background-color: var(--navy);
+}
+
+/* ---------- Tablet (640px - 1024px): 2 columnas ---------- */
+
+@media (min-width: 640px) {
+  .contenedor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Desktop (> 1024px): barra lateral fija + 3 columnas ---------- */
+
+@media (min-width: 1025px) {
+  .layout {
+    grid-template-columns: 280px minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .filtros-toggle {
+    display: none;
+  }
+
+  .sidebar,
+  .sidebar.is-open {
+    grid-template-rows: 1fr;
+    visibility: visible;
+  }
+
+  .contenedor-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

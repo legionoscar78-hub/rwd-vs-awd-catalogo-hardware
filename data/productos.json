@@ -1,0 +1,204 @@
+[
+{
+"id": 1,
+"categoria": "procesador",
+"marca": "Intel",
+"nombre_corto": "i9-14900K",
+"nombre": "Intel Core i9-14900K",
+"imagen": "https://example.com/images/intel-i9-14900k.png",
+"especificaciones_tecnicas": {
+"socket": "LGA1700",
+"nucleos": 24,
+"hilos": 32,
+"frecuencia_base": "3.2 GHz",
+"frecuencia_turbo": "6.0 GHz",
+"cache": "36 MB Intel Smart Cache",
+"tdp": "125W"
+},
+"precio": 589.99
+},
+{
+"id": 2,
+"categoria": "procesador",
+"marca": "AMD",
+"nombre_corto": "Ryzen 7 7800X3D",
+"nombre": "AMD Ryzen 7 7800X3D",
+"imagen": "https://example.com/images/ryzen-7-7800x3d.png",
+"especificaciones_tecnicas": {
+"socket": "AM5",
+"nucleos": 8,
+"hilos": 16,
+"frecuencia_base": "4.2 GHz",
+"frecuencia_turbo": "5.0 GHz",
+"cache": "96 MB L3 3D V-Cache",
+"tdp": "120W"
+},
+"precio": 449.00
+},
+{
+"id": 3,
+"categoria": "gpu",
+"marca": "NVIDIA",
+"nombre_corto": "RTX 4090",
+"nombre": "NVIDIA GeForce RTX 4090 Founders Edition",
+"imagen": "https://example.com/images/rtx-4090.png",
+"especificaciones_tecnicas": {
+"vram": "24 GB GDDR6X",
+"bus_memoria": "384-bit",
+"núcleos_cuda": 16384,
+"reloj_boost": "2.52 GHz",
+"consumo_energia": "450W",
+"conectores": "1x 16-pin (12VHPWR)"
+},
+"precio": 1599.99
+},
+{
+"id": 4,
+"categoria": "gpu",
+"marca": "ASUS",
+"nombre_corto": "RTX 4070 Ti Super",
+"nombre": "ASUS ROG Strix GeForce RTX 4070 Ti Super",
+"imagen": "https://example.com/images/rtx-4070ti-super.png",
+"especificaciones_tecnicas": {
+"vram": "16 GB GDDR6X",
+"bus_memoria": "256-bit",
+"núcleos_cuda": 8448,
+"reloj_boost": "2.67 GHz",
+"refrigeración": "Triple Ventilador Axial-tech",
+"consumo_energia": "285W"
+},
+"precio": 849.99
+},
+{
+"id": 5,
+"categoria": "placa",
+"marca": "ASUS",
+"nombre_corto": "ROG Z790 Hero",
+"nombre": "ASUS ROG Maximus Z790 Hero",
+"imagen": "https://example.com/images/rog-z790-hero.png",
+"especificaciones_tecnicas": {
+"factor_forma": "ATX",
+"socket": "LGA1700",
+"chipset": "Intel Z790",
+"soporte_memoria": "DDR5 hasta 7800+(OC) MHz",
+"ranuras_m2": 5,
+"conectividad": "Wi-Fi 6E, Ethernet 2.5Gb, Thunderbolt 4"
+},
+"precio": 629.99
+},
+{
+"id": 6,
+"categoria": "placa",
+"marca": "MSI",
+"nombre_corto": "B650 Tomahawk",
+"nombre": "MSI MAG B650 TOMAHAWK WIFI",
+"imagen": "https://example.com/images/msi-b650-tomahawk.png",
+"especificaciones_tecnicas": {
+"factor_forma": "ATX",
+"socket": "AM5",
+"chipset": "AMD B650",
+"soporte_memoria": "DDR5 hasta 6600+(OC) MHz",
+"ranuras_m2": 3,
+"conectividad": "Wi-Fi 6E, Ethernet 2.5Gb, Bluetooth 5.3"
+},
+"precio": 219.99
+},
+{
+"id": 7,
+"categoria": "ram",
+"marca": "Corsair",
+"nombre_corto": "Dominator 32GB",
+"nombre": "Corsair Dominator Titanium DDR5 32GB (2x16GB)",
+"imagen": "https://example.com/images/corsair-dominator-ddr5.png",
+"especificaciones_tecnicas": {
+"capacidad": "32 GB (2 x 16 GB)",
+"tipo": "DDR5",
+"velocidad": "7200 MHz",
+"latencia_cas": "CL34",
+"voltaje": "1.45V",
+"iluminacion": "RGB Dinámico"
+},
+"precio": 234.99
+},
+{
+"id": 8,
+"categoria": "almacenamiento",
+"marca": "Samsung",
+"nombre_corto": "990 PRO 2TB",
+"nombre": "Samsung 990 PRO NVMe M.2 SSD 2TB",
+"imagen": "https://example.com/images/samsung-990-pro-2tb.png",
+"especificaciones_tecnicas": {
+"capacidad": "2 TB",
+"interfaz": "PCIe Gen 4.0 x4, NVMe 2.0",
+"velocidad_lectura": "Hasta 7450 MB/s",
+"velocidad_escritura": "Hasta 6900 MB/s",
+"factor_forma": "M.2 2280",
+"disipador": "Incluido"
+},
+"precio": 179.99
+},
+{
+"id": 9,
+"categoria": "fuente",
+"marca": "Corsair",
+"nombre_corto": "RM1000x",
+"nombre": "Corsair RM1000x Shift 1000W 80 Plus Gold",
+"imagen": "https://example.com/images/corsair-rm1000x-shift.png",
+"especificaciones_tecnicas": {
+"potencia": "1000 W",
+"certificacion": "80 PLUS Gold",
+"modularidad": "Totalmente Modular (Conectores laterales)",
+"formato": "ATX 3.0",
+"tamaño_ventilador": "140 mm FDB"
+},
+"precio": 209.99
+},
+{
+"id": 10,
+"categoria": "refrigeracion",
+"marca": "NZXT",
+"nombre_corto": "Kraken Elite 360",
+"nombre": "NZXT Kraken Elite 360 RGB",
+"imagen": "https://example.com/images/nzxt-kraken-elite-360.png",
+"especificaciones_tecnicas": {
+"tipo": "Refrigeración Líquida AIO",
+"tamaño_radiador": "360 mm",
+"pantalla": "LCD 2.36 Personalizable",
+"ventiladores": "3x F120 RGB Core",
+"compatibilidad": "Intel LGA 1700/1200, AMD AM5/AM4"
+},
+"precio": 299.99
+},
+{
+"id": 11,
+"categoria": "gabinete",
+"marca": "Lian Li",
+"nombre_corto": "O11 Dynamic EVO",
+"nombre": "Lian Li O11 Dynamic EVO",
+"imagen": "https://example.com/images/lian-li-o11-evo.png",
+"especificaciones_tecnicas": {
+"tipo": "Mid Tower",
+"materiales": "Vidrio templado, Aluminio, Acero",
+"soporte_placa_base": "E-ATX, ATX, Micro-ATX, Mini-ITX",
+"soporte_radiador": "Hasta 360 mm (Superior, Lateral, Inferior)",
+"panel_e_s": "1x USB 3.1 Tipo-C, 2x USB 3.0, Audio HD"
+},
+"precio": 159.99
+},
+{
+"id": 12,
+"categoria": "refrigeracion",
+"marca": "Noctua",
+"nombre_corto": "NH-D15",
+"nombre": "Noctua NH-D15 chromax.black",
+"imagen": "https://example.com/images/noctua-nh-d15-black.png",
+"especificaciones_tecnicas": {
+"tipo": "Disipador por Aire de Doble Torre",
+"ventiladores": "2x NF-A15 HS-PWM chromax.black",
+"compatibilidad": "Intel LGA1700/1200/115x, AMD AM5/AM4",
+"nivel_ruido": "24.6 dB(A)",
+"material": "Cobre (base y tubos), Aluminio (aletas)"
+},
+"precio": 119.95
+}
+]

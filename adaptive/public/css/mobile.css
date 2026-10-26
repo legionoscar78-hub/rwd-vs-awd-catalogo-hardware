@@ -1,0 +1,135 @@
+/* Catálogo de Hardware - Versión B (AWD) - Vista MÓVIL
+   Lista compacta: sin gráfico, sin tabla de especificaciones y sin JavaScript. */
+
+:root {
+  --azul: #007bff;
+  --azul-osc: #0056b3;
+  --navy: #1b2a41;
+  --fondo: #f4f6f9;
+  --texto: #333333;
+  --suave: #666666;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+  line-height: 1.4;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.site-header {
+  padding: 0.75rem 1rem;
+  background-color: var(--navy);
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #5fb0ff;
+}
+
+main {
+  padding: 1rem;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  color: var(--navy);
+}
+
+h1 small {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: normal;
+  color: var(--suave);
+}
+
+.lista {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.item-img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.item-body {
+  min-width: 0;
+}
+
+.item-tag {
+  margin: 0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--azul-osc);
+}
+
+.item-title {
+  margin: 0.1rem 0;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.item-price {
+  font-weight: bold;
+  color: var(--navy);
+}
+
+.item-btn {
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 0.85rem;
+  color: #ffffff;
+  background-color: var(--azul);
+  border: 0;
+  border-radius: 5px;
+}
+
+.site-footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #d6e2f3;
+  background-color: var(--navy);
+}

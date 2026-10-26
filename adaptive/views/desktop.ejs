@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Hardware | AWD Desktop</title>
+    <link rel="stylesheet" href="<%= base %>/public/css/desktop.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="logo" href="#">Server<span>Hardware</span></a>
+        <nav class="nav">
+            <a href="#catalogo">Catálogo</a>
+            <a href="#especificaciones">Especificaciones</a>
+        </nav>
+    </header>
+
+    <h1 class="titulo">Catálogo de Hardware y Componentes de Servidor <small>Versión B &mdash; AWD (desktop)</small></h1>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-box">
+                <form class="filtros">
+                    <h2>Filtros</h2>
+                    <fieldset>
+                        <legend>Categoría</legend>
+<% categorias.forEach((c) => { -%>
+                        <label><input type="checkbox" name="categoria"> <%= c %></label>
+<% }) -%>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Marca</legend>
+<% marcas.forEach((m) => { -%>
+                        <label><input type="checkbox" name="marca"> <%= m %></label>
+<% }) -%>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Precio máximo</legend>
+                        <input type="range" name="precio" min="100" max="<%= precioMax %>" value="<%= precioMax %>" aria-label="Precio máximo">
+                    </fieldset>
+                </form>
+
+                <section class="comparativa">
+                    <h2>Comparativa de precios</h2>
+                    <ul class="barras">
+<% productos.forEach((p) => { -%>
+                        <li style="--pct: <%= (p.precio / precioMax * 100).toFixed(1) %>%">
+                            <span><%= p.nombre_corto %></span>
+                            <span class="barras-valor"><%= p.precioCorto %></span>
+                            <span class="barras-pista"><span class="barras-barra"></span></span>
+                        </li>
+<% }) -%>
+                    </ul>
+                </section>
+            </div>
+        </aside>
+
+        <main id="catalogo">
+            <h2>Productos</h2>
+            <div class="contenedor-grid">
+<% productos.forEach((p, i) => { -%>
+                <article class="card">
+                    <img class="card-img" src="<%= base %>/images/<%= p.slug %>-800.webp" width="800" height="600" alt="<%= p.nombre %>"<% if (i > 0) { %> loading="lazy"<% } %>>
+                    <div class="card-body">
+                        <p class="card-tag"><%= p.categoriaEtiqueta %> · <%= p.marca %></p>
+                        <h3 class="card-title"><%= p.nombre %></h3>
+                        <dl class="card-specs">
+<% p.specs.slice(0, 4).forEach((s) => { -%>
+                            <div><dt><%= s.etiqueta %></dt><dd><%= s.valor %></dd></div>
+<% }) -%>
+                        </dl>
+                        <div class="card-footer">
+                            <span class="card-price"><%= p.precioTxt %></span>
+                            <button type="button" class="card-btn">Comprar</button>
+                        </div>
+                    </div>
+                </article>
+<% }) -%>
+            </div>
+        </main>
+    </div>
+
+    <section class="especificaciones" id="especificaciones">
+        <h2>Tabla completa de especificaciones</h2>
+        <table class="tabla">
+            <thead>
+                <tr><th>Producto</th><th>Categoría</th><th>Especificaciones</th><th>Precio</th></tr>
+            </thead>
+            <tbody>
+<% productos.forEach((p) => { -%>
+                <tr>
+                    <th scope="row"><%= p.nombre %></th>
+                    <td><%= p.categoriaEtiqueta %></td>
+                    <td>
+                        <ul class="tabla-specs">
+<% p.specs.forEach((s) => { -%>
+                            <li><strong><%= s.etiqueta %>:</strong> <%= s.valor %></li>
+<% }) -%>
+                        </ul>
+                    </td>
+                    <td class="tabla-precio"><%= p.precioTxt %></td>
+                </tr>
+<% }) -%>
+            </tbody>
+        </table>
+    </section>
+
+    <footer class="site-footer">Práctica RWD vs. AWD &mdash; Interfaces Web</footer>
+</body>
+</html>
