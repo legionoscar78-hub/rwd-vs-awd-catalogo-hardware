@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Hardware | AWD Tablet</title>
+    <link rel="stylesheet" href="<%= base %>/public/css/tablet.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="logo" href="#">Server<span>Hardware</span></a>
+        <nav class="nav">
+            <a href="#catalogo">Catálogo</a>
+        </nav>
+    </header>
+
+    <main id="catalogo">
+        <h1>Catálogo de Hardware y Componentes de Servidor <small>Versión B &mdash; AWD (tablet)</small></h1>
+
+        <%# Filtros en un <details> nativo: se despliegan sin JavaScript. Sin gráfico ni tabla completa en el DOM. %>
+        <details class="filtros">
+            <summary>Filtros</summary>
+            <form class="filtros-form">
+                <fieldset>
+                    <legend>Categoría</legend>
+<% categorias.forEach((c) => { -%>
+                    <label><input type="checkbox" name="categoria"> <%= c %></label>
+<% }) -%>
+                </fieldset>
+                <fieldset>
+                    <legend>Marca</legend>
+<% marcas.forEach((m) => { -%>
+                    <label><input type="checkbox" name="marca"> <%= m %></label>
+<% }) -%>
+                </fieldset>
+                <fieldset>
+                    <legend>Precio máximo</legend>
+                    <input type="range" name="precio" min="100" max="<%= precioMax %>" value="<%= precioMax %>" aria-label="Precio máximo">
+                </fieldset>
+            </form>
+        </details>
+
+        <div class="grid">
+<% productos.forEach((p, i) => { -%>
+            <article class="card">
+                <img class="card-img" src="<%= base %>/images/<%= p.slug %>-800.webp" width="800" height="600" alt="<%= p.nombre %>"<% if (i > 1) { %> loading="lazy"<% } %>>
+                <div class="card-body">
+                    <p class="card-tag"><%= p.categoriaEtiqueta %> · <%= p.marca %></p>
+                    <h2 class="card-title"><%= p.nombre %></h2>
+                    <dl class="card-specs">
+<% p.specs.slice(0, 3).forEach((s) => { -%>
+                        <div><dt><%= s.etiqueta %></dt><dd><%= s.valor %></dd></div>
+<% }) -%>
+                    </dl>
+                    <div class="card-footer">
+                        <span class="card-price"><%= p.precioTxt %></span>
+                        <button type="button" class="card-btn">Comprar</button>
+                    </div>
+                </div>
+            </article>
+<% }) -%>
+        </div>
+    </main>
+
+    <footer class="site-footer">Práctica RWD vs. AWD &mdash; Interfaces Web</footer>
+</body>
+</html>

@@ -1,6 +1,6 @@
 // Servidor de la práctica RWD vs. AWD
 //   /responsive -> versión A: HTML estático único (RWD)
-//   /adaptive   -> versión B: el servidor elige desktop.ejs o mobile.ejs (AWD)
+//   /adaptive   -> versión B: el servidor elige desktop.ejs, tablet.ejs o mobile.ejs (AWD)
 const path = require('path');
 const express = require('express');
 const detectDevice = require('./adaptive/middleware/detectDevice');

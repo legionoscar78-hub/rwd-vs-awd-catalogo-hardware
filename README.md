@@ -7,7 +7,7 @@ Chrome DevTools y Lighthouse:
 | Ruta           | Versión                       | Cómo se adapta                                                       |
 |----------------|-------------------------------|----------------------------------------------------------------------|
 | `/responsive/` | A: RWD (Responsive Web Design)| El navegador adapta el layout con CSS Grid, Flexbox y media queries. |
-| `/adaptive`    | B: AWD (Adaptive Web Design)  | Segun el dispositivo, User-Agent envía `desktop.ejs` o `mobile.ejs`. |
+| `/adaptive`    | B: AWD (Adaptive Web Design)  | Según el User-Agent, envía `desktop.ejs`, `tablet.ejs` o `mobile.ejs`. |
 
 ## Requisitos
 
@@ -30,11 +30,12 @@ Para usar otro puerto: `PORT=3100 npm start` (en PowerShell: `$env:PORT=3100; np
 ## Cómo probar la versión adaptativa
 
 La detección se hace con el User-Agent, no con el ancho de la ventana. Redimensionar una ventana de escritorio
-no cambia la vista: hay que emular un dispositivo móvil.
+no cambia la vista: hay que emular el dispositivo.
 
 1. Abre `/adaptive` y DevTools (F12).
 2. Activa el modo dispositivo (Ctrl+Shift+M) y elige iPhone 12 Pro (390 × 844).
 3. Recarga la página: el título de la pestaña será "AWD Móvil" y no habrá gráfico ni tabla de especificaciones.
+4. Para ver la vista de tablet, elige iPad (por ejemplo iPad Air) y recarga: el título será "AWD Tablet".
 
 ## Estructura del proyecto
 
@@ -55,8 +56,9 @@ ComponentesHardware/
 │   ├── middleware/detectDevice.js  # Detección de agente con express-useragent
 │   ├── views/
 │   │   ├── desktop.ejs             # Vista completa: filtros, gráfico y tabla de especificaciones
+│   │   ├── tablet.ejs              # Vista intermedia: filtros desplegables, sin gráfico ni tabla
 │   │   └── mobile.ejs              # Vista ligera: sin gráfico, sin tabla y sin JavaScript
-│   └── public/css/                 # desktop.css y mobile.css
+│   └── public/css/                 # desktop.css, tablet.css y mobile.css
 └── reporte/                        # Entregable: métricas, capturas y análisis crítico
     ├── RWDvsAWD.pdf                # Reporte técnico (tablas, capturas y análisis crítico)
     └── capturas/                   # Capturas originales de DevTools y Lighthouse
@@ -73,12 +75,14 @@ ComponentesHardware/
 
 ## Versión B: AWD (`/adaptive`)
 
-- `detectDevice.js` analiza el User-Agent con `express-useragent` y deja `req.device` en `mobile` o `desktop`.
-- `server.js` renderiza la plantilla que corresponde (`desktop.ejs` o `mobile.ejs`), cada una con su propia hoja de estilos.
+- `detectDevice.js` analiza el User-Agent con `express-useragent` y deja `req.device` en `mobile`, `tablet` o `desktop` (`isTablet` se evalúa primero, porque los iPad y las tablets Android también reportan `isMobile`).
+- `server.js` renderiza la plantilla que corresponde (`desktop.ejs`, `tablet.ejs` o `mobile.ejs`), cada una con su propia hoja de estilos.
 - **Vista móvil:** el servidor no incluye en el DOM el gráfico de comparativa ni la tabla completa de especificaciones,
   ni el panel de filtros; usa miniaturas de 400 px y no envía JavaScript.
+- **Vista tablet:** tarjetas en 2 columnas con imágenes de 800 px y 3 especificaciones por producto; los filtros van en un
+  `<details>` desplegable (sin JavaScript). Tampoco incluye el gráfico ni la tabla completa.
 - **Vista desktop:** filtros, gráfico, tarjetas con imágenes de 800 px y tabla completa.
-- Ambas vistas usan solo las imágenes WebP de `responsive/images/webp/`.
+- Las tres vistas usan solo las imágenes WebP de `responsive/images/webp/`.
 
 ## Medición de rendimiento
 
