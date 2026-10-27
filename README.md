@@ -58,9 +58,8 @@ ComponentesHardware/
 │   │   └── mobile.ejs              # Vista ligera: sin gráfico, sin tabla y sin JavaScript
 │   └── public/css/                 # desktop.css y mobile.css
 └── reporte/                        # Entregable: métricas, capturas y análisis crítico
-    ├── tabla-metricas.md
-    ├── analisis-critico.md
-    └── capturas/
+    ├── RWDvsAWD.pdf                # Reporte técnico (tablas, capturas y análisis crítico)
+    └── capturas/                   # Capturas originales de DevTools y Lighthouse
 ```
 
 ## Versión A: RWD (`/responsive/`)
